@@ -1,0 +1,33 @@
+body {
+  background-image: url("https://img.freepik.com/photos-gratuite/fond-noir-texture_23-2147686502.jpg?t=st=1725375477~exp=1725379077~hmac=534350c4e5dd87f436a1de96ea51933f62e12be7ae796475ccc97187cdbe2b9f&w=900");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main {
+  max-width: 960px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+
+.title {
+  color: antiquewhite;
+  font-size: 46px;
+}
+
+.notes {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+}

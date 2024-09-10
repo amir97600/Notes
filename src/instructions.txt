@@ -1,0 +1,96 @@
+############ Note App en React + localStorage
+
+** npm install uuid
+// Générations d'id aléatoires
+// Notes uniques
+
+** Dossier pour les components
+// Header.jsx 
+// Component pour le Header
+// On pourra le refaire autant qu'on veut
+--------------
+// Notes.jsx
+// Component pour les notes
+--------------
+// CreateNotes.jsx
+--------------
+// Utiliser CreateNotes.jsx dans Notes.jsx
+// Utiliser use state pour enregistrer
+// du texte dans la note dès qu'il change
+// on stocke le texte dans une variable 
+// on a une fonction pour changer le texte
+// avec " " comme texte par défaut
+---------------
+// On veut aussi une fonction qui 
+// enregistre le texte dans un tableau
+// quand on clique sur save
+// on a une variable pour le stocker
+--------------- 
+// On creer une fonction pour enregistrer
+// le texte dans la variable
+// La fonction CreateNotes
+// utilise inputTexT, setInputText et saveHandler comme argument
+// le textarea a pour value inputTexT
+// et pour fonction onchange setInputText
+// on utilise une fonction lambda
+// qui va stocker le texte taper dedans 
+// dans inputTexT grâce à setInputText
+// qui est fait pour modifier cette variable là
+------------------
+// Mettre une limite de caractères à taper et l'afficher 
+** Regler le CSS comme tu veux dans App.css
+
+**saveHandler
+// Fonction qui recupere le tableau de notes
+// rajoute un objet note avec
+// id generée par uuid
+// text = inputTexT
+// en utilisant la fonction setNotes
+// on reinitialise ensuite le inputTexT
+// on associe un useeffect
+// c'est une fonction qui appelle 
+// un callback seulement dans le cas
+// où la variable dont elle est dependante change
+// le callback de cette fonction enregistrera
+// le tableau des notes dans le localStorage
+
+//On utilise aussi un useeffect initiale
+//Il va chercher si les notes sont dans le localStorage
+//Et les stocker dans notre variable
+
+****Affichage des notes
+//On utilise la variable notes 
+//Pour afficher les notes à l'écran
+//On utilise la fonction map 
+//pour configurer un component Note
+
+****Note component
+//Creer un component Note
+// Ce sont les notes créer
+// avec un id, un text 
+// un bouton save et un edit
+----------------
+// On utilise un edit toogle 
+// avec use state pour basculer 
+// en mode édition de la note
+// on lui associe une fonction 
+// editHandler(id,text)
+-------------
+// setEdit stocke l'id de la note 
+// inputTexT devient le texte à Mettre
+// qd on refait les notes, on cherche
+// si l'id est à modifier ou pas
+-----------
+// Si modification, on creer une new note
+// sinon on affiche juste la note
+-----------
+//Changer saveHandler pour savoir si
+//c'est un nouveau à ajouter
+// ou si c'est un à modifier
+-----------
+//On fait disparaitre CreateNotes
+//En mode edit
+//Mais on pourrait aussi avoir deux
+// variables differentes  
+------------
+//DeleteHandler pour supprimer la note
